@@ -24,48 +24,48 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text=""
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
             android:text="月"
-            android:background="@drawable/simple_frame" />
+            android:background="@drawable/youbi_frame" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/youbi_frame"
             android:text="火" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/youbi_frame"
             android:text="水" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/youbi_frame"
             android:text="木" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/youbi_frame"
             android:text="金" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/youbi_frame"
             android:text="土" />
     </LinearLayout>
 
@@ -78,7 +78,7 @@
             android:layout_height="match_parent"
             android:text="1"
             android:gravity="center"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"
@@ -144,7 +144,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="2"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"
@@ -210,7 +210,7 @@
             android:layout_height="match_parent"
             android:text="3"
             android:gravity="center"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"
@@ -276,7 +276,7 @@
             android:layout_height="match_parent"
             android:text="4"
             android:gravity="center"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"
@@ -303,8 +303,7 @@
             android:id="@+id/position_20"
             android:gravity="center"
             android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="43" />
+            android:background="@drawable/simple_frame" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -342,7 +341,7 @@
             android:layout_height="match_parent"
             android:text="5"
             android:gravity="center"
-            android:background="@drawable/simple_frame"
+            android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"

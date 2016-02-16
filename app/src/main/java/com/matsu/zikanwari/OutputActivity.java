@@ -39,6 +39,22 @@ public class OutputActivity extends Activity {
         et3 = (EditText)findViewById(R.id.editText3);
         et4 = (EditText)findViewById(R.id.editText4);
 
+        //Hint
+        intent = getIntent();
+        position = intent.getIntExtra("POSITION",0);
+        SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
+        et.setHint(data.getString("SUBJECT" + String.valueOf(position), null));
+        et.setText(data.getString("SUBJECT" + String.valueOf(position), null));
+
+        et3.setHint(data.getString("ROOM" + String.valueOf(position), null));
+        et3.setText(data.getString("ROOM" + String.valueOf(position), null));
+
+        et2.setHint(data.getString("TEACHER" + String.valueOf(position), null));
+        et2.setText(data.getString("TEACHER" + String.valueOf(position), null));
+
+        et4.setHint(data.getString("MEMO"+String.valueOf(position),null));
+        et4.setText(data.getString("MEMO" + String.valueOf(position), null));
+
 
 
 //        SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);;
@@ -49,7 +65,6 @@ public class OutputActivity extends Activity {
 
 
 
-        intent = getIntent();
         position_x = intent.getIntExtra("position_x", 0);
         position_y = intent.getIntExtra("position_y", 0);
 
@@ -102,20 +117,23 @@ public class OutputActivity extends Activity {
         room = et3.getText().toString();
         memo = et4.getText().toString();
 
-        int position = intent.getIntExtra("POSITION",0);
+
         SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = data.edit();
         editor.putString("SUBJECT"+String.valueOf(position), subject);
+        editor.putString("ROOM"+String.valueOf(position),room);
+        editor.putString("TEACHER"+String.valueOf(position),teacher);
+        editor.putString("MEMO"+String.valueOf(position),memo);
         editor.apply();
 
 
         intent = new Intent(this,HomeActivity.class);
         intent.putExtra("POSITION",position);
         //intent.putExtra("SUBJECT",subject);
-        intent.putExtra("ROOM",room);
-        intent.putExtra("TEACHER",teacher);
-        intent.putExtra("MEMO",memo);
+        //intent.putExtra("ROOM",room);
+        //intent.putExtra("TEACHER",teacher);
+        //intent.putExtra("MEMO",memo);
         startActivity(intent);
     }
 }

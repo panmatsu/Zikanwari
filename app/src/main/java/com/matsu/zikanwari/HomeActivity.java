@@ -75,9 +75,9 @@ public class HomeActivity extends ActionBarActivity {
         Intent intent = getIntent();
         int position = intent.getIntExtra("POSITION", 0);
         //subject[position] = intent.getStringExtra("SUBJECT");
-        teacher[position] = intent.getStringExtra("TEACHER");
-        room[position] = intent.getStringExtra("ROOM");
-        memo[position] = intent.getStringExtra("MEMO");
+        //teacher[position] = intent.getStringExtra("TEACHER");
+        //room[position] = intent.getStringExtra("ROOM");
+        //memo[position] = intent.getStringExtra("MEMO");
 
 //        SharedPreferences.Editor editor = data.edit();
 //        for (int i =0;i<35;i++){
@@ -86,7 +86,10 @@ public class HomeActivity extends ActionBarActivity {
 //        editor.apply();
 
         for (int i =0;i<35;i++){
-            subject[i] =  data.getString("SUBJECT"+String.valueOf(i), null);
+            subject[i] = data.getString("SUBJECT"+String.valueOf(i), null);
+            teacher[i] = data.getString("TEACHER"+String.valueOf(i),null);
+            room[i] = data.getString("ROOM"+String.valueOf(i),null);
+            memo[i] = data.getString("MEMO"+String.valueOf(i),null);
         }
 
         //TODO Qiita

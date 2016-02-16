@@ -1,5 +1,8 @@
 package com.matsu.zikanwari;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,18 +10,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SettingActivity extends AppCompatActivity {
 
     String str0 ="あり";  //数字で1
-    int selected2;  //ありだと1、なし0
-    int selected0; //時間数を入れる
+    int selected2=1;  //ありだと1、なし0
+  //  int selected0; //時間数を入れる
+  EditText eT00;
+    String nottext; //通知
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
+        eT00 = (EditText)findViewById(R.id.eT0);
     }
 
     public void spinnerOK(View view){       //OKボタンを押したとき実行
@@ -50,5 +59,28 @@ public class SettingActivity extends AppCompatActivity {
 
 
     }
+    public void notiget(View view){
+        nottext = eT00.getText().toString();  //取得
+        Toast.makeText(this, nottext, Toast.LENGTH_LONG);
+    }
+    public void notion(View view){
+// PendingIntentの生成
+        Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity( this, 0, i, 0);
+// 詳細情報の設定とPendingIntentの設定
+        Notification notification = new Notification.Builder(this)
+
+                .setContentTitle("通知")
+                .setContentText(nottext)
+                .setContentIntent(pendingIntent)
+                .setSmallIcon(R.drawable.minie)
+                .setAutoCancel(true)
+                .build();
+        NotificationManager G = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        G.notify(1000, notification);
+    }
 
 }
+
+

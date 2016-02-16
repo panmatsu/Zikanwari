@@ -129,11 +129,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:id="@+id/position_5"
             android:gravity="center"
             android:onClick="onClick"
-            android:id="@+id/position_5"
             android:background="@drawable/simple_frame"
-            android:text="16" />
+            android:text="15" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -194,12 +194,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="onClick"
             android:layout_weight="1"
-            android:gravity="center"
             android:id="@+id/position_11"
+            android:gravity="center"
+            android:onClick="onClick"
             android:background="@drawable/simple_frame"
-            android:text="26" />
+            android:text="15" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -261,11 +261,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:onClick="onClick"
-            android:gravity="center"
             android:id="@+id/position_17"
+            android:gravity="center"
+            android:onClick="onClick"
             android:background="@drawable/simple_frame"
-            android:text="36" />
+            android:text="15" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -326,12 +326,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:layout_weight="1"
             android:id="@+id/position_23"
-            android:background="@drawable/simple_frame"
+            android:gravity="center"
             android:onClick="onClick"
-            android:text="46" />
+            android:background="@drawable/simple_frame"
+            android:text="15" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -397,6 +397,66 @@
             android:gravity="center"
             android:onClick="onClick"
             android:background="@drawable/simple_frame"
-            android:text="56" />
+            android:text="55" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/position_25"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:background="@drawable/simple_frame"
+            android:text="6"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/position_30"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:background="@drawable/simple_frame"
+            android:text="61"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/position_31"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:background="@drawable/simple_frame"
+            android:text="62"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/position_32"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:background="@drawable/simple_frame"
+            android:text="63"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/position_33"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:background="@drawable/simple_frame"
+            android:text="64"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/position_34"
+            android:gravity="center"
+            android:onClick="onClick"
+            android:background="@drawable/simple_frame"
+            android:text="65"/>
+    </LinearLayout>
+
 </LinearLayout>

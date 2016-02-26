@@ -22,26 +22,28 @@ public class OutputActivity extends Activity {
     String room;
     String memo;
     int position_x,position_y;
-    Button btn;
+    Button saveButton;
     int position;
+
+    String date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_output);
 
-        tb = (TextView)findViewById(R.id.textView5);
-
-        btn = (Button)findViewById(R.id.button);
+        //保存Button
+        saveButton = (Button)findViewById(R.id.button);
 
         et = (EditText)findViewById(R.id.editText);
         et2 = (EditText)findViewById(R.id.editText2);
         et3 = (EditText)findViewById(R.id.editText3);
         et4 = (EditText)findViewById(R.id.editText4);
 
-        //Hint
-        intent = getIntent();
-        position = intent.getIntExtra("POSITION",0);
+        //左上に選択された欄の曜日と何時間目かを表示させる
+        setDate();
+
+        //Hint と Text に表示させる
         SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
         et.setHint(data.getString("SUBJECT" + String.valueOf(position), null));
         et.setText(data.getString("SUBJECT" + String.valueOf(position), null));
@@ -55,22 +57,58 @@ public class OutputActivity extends Activity {
         et4.setHint(data.getString("MEMO"+String.valueOf(position),null));
         et4.setText(data.getString("MEMO" + String.valueOf(position), null));
 
-
-
-//        SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);;
-//
-//        position = data.getInt("POSITION",0);
-
-
-
-
-
-        position_x = intent.getIntExtra("position_x", 0);
-        position_y = intent.getIntExtra("position_y", 0);
-
-        WeekTime();
+        //WeekTime();
     }
 
+    /**
+     * 曜日と何時間目かをset
+     */
+    public void setDate(){
+        //曜日＋○時間目
+        tb = (TextView)findViewById(R.id.textView5);
+
+        intent = getIntent();
+        position = intent.getIntExtra("POSITION", 0);
+
+        if(0 <= position && position <6){
+            setDay(position);
+            date += "1";
+        }else if(6 <= position && position < 12){
+            setDay(position - 6);
+            date += "2";
+        }else if(6 <= position && position < 12){
+            setDay(position - 6);
+            date += "3";
+        }else if(6 <= position && position < 12){
+            setDay(position - 6);
+            date += "4";
+        }else if(6 <= position && position < 12){
+            setDay(position - 6);
+            date += "5";
+        }else if(6 <= position && position < 12){
+            setDay(position - 6);
+            date += "6";
+        }
+
+        tb.setText(date);
+    }
+
+    //曜日を代入する
+    public void setDay(int num){
+        if(position == 0){
+            date = "月";
+        }else if(position == 1){
+            date = "火";
+        }else if(position == 2){
+            date = "水";
+        }else if(position == 3){
+            date = "木";
+        }else if(position == 4){
+            date = "金";
+        }else if(position == 5) {
+            date = "土";
+        }
+    }
 
 
     public void WeekTime(){

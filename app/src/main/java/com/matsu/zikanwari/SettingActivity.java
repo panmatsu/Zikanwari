@@ -17,7 +17,7 @@ import android.widget.Toast;
 public class SettingActivity extends AppCompatActivity {
 
     String str0 ="あり";  //数字で1
-    int selected2=1;  //ありだと1、なし0
+    int selected2=0;  //ありだと1、なし0
      //  int selected0; //時間数を入れる
     EditText eT00;
     String nottext; //通知

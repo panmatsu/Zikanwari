@@ -16,12 +16,12 @@ import android.widget.Toast;
 
 public class HomeActivity extends ActionBarActivity{
 
-    String[] subject = new String[36];
-    String[] teacher = new String[36];
-    String[] room = new String[36];
-    String[] memo = new String[36];
+    String[] subject = new String[30];
+    String[] teacher = new String[30];
+    String[] room = new String[30];
+    String[] memo = new String[30];
 
-    TextView[] textView = new TextView[36];
+    TextView[] textView = new TextView[30];
 
     //Layoutのデータ番号
     int layout_data;
@@ -33,24 +33,29 @@ public class HomeActivity extends ActionBarActivity{
         super.onCreate(savedInstanceState);
         SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
         int zigen = data.getInt("Zigen",5);
+        //あり:1 なし:0
         int doyou = data.getInt("Doyou",1);
 
         if(zigen == 5 && doyou == 1){
             //土曜ありの５限
             setContentView(R.layout.activity_home);
             layout_data = 0;
+            Log.d("Test","土曜ありの５限");
         }else if(zigen==6 && doyou == 1){
             //土曜ありの６限
             setContentView(R.layout.activity_home1);
             layout_data = 1;
+            Log.d("Test","土曜ありの６限");
         }else if(zigen == 5 && doyou == 0){
             //土曜なしの５限
             setContentView(R.layout.activity_home2);
             layout_data = 2;
+            Log.d("Test","土曜なしの５限");
         }else if(zigen == 6 && doyou == 0){
             //土曜なしの６限
             setContentView(R.layout.activity_home3);
             layout_data = 3;
+            Log.d("Test","土曜なしの６限");
         }
 
         // ツールバーをアクションバーとしてセット
@@ -92,7 +97,7 @@ public class HomeActivity extends ActionBarActivity{
 //        }
 //        editor.apply();
 
-        for (int i =0;i<36;i++){
+        for (int i =0;i<30;i++){
             subject[i] = data.getString("SUBJECT"+String.valueOf(i), null);
             teacher[i] = data.getString("TEACHER"+String.valueOf(i),null);
             room[i] = data.getString("ROOM"+String.valueOf(i),null);
@@ -100,7 +105,7 @@ public class HomeActivity extends ActionBarActivity{
         }
 
         //TODO Qiita
-        for(int i = 0; i < 36; i++){
+        for(int i = 0; i < 30; i++){
             int id = getResources().getIdentifier("position_" + i, "id", getPackageName());
             textView[i] = (TextView)findViewById(id);
             /**

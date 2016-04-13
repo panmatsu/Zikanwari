@@ -167,7 +167,7 @@ public class OutputActivity extends Activity {
 
 
         intent = new Intent(this,HomeActivity.class);
-        intent.putExtra("POSITION",position);
+        //intent.putExtra("POSITION",position);
         //intent.putExtra("SUBJECT",subject);
         //intent.putExtra("ROOM",room);
         //intent.putExtra("TEACHER",teacher);

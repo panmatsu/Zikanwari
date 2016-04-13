@@ -61,7 +61,8 @@ public class SettingActivity extends AppCompatActivity {
     }
     public void notiget(View view){
         nottext = eT00.getText().toString();  //取得
-        Toast.makeText(this, nottext, Toast.LENGTH_LONG);
+        //通知のTextをトーストで表示させる
+        Toast.makeText(this, nottext, Toast.LENGTH_LONG).show();
     }
     public void notion(View view){
 // PendingIntentの生成

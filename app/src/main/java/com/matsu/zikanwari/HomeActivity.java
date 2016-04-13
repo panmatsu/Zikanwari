@@ -16,45 +16,46 @@ import android.widget.Toast;
 
 public class HomeActivity extends ActionBarActivity{
 
-    String[] subject = new String[30];
-    String[] teacher = new String[30];
-    String[] room = new String[30];
-    String[] memo = new String[30];
+    String[] subject = new String[36];
+    String[] teacher = new String[36];
+    String[] room = new String[36];
+    String[] memo = new String[36];
 
-    TextView[] textView = new TextView[30];
+    TextView[] textView = new TextView[36];
 
     //Layoutのデータ番号
-    int layout_data;
+    int layout_mode = 0;
 
-    //配列の番号を認識するよう
-    int ren;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
+
+        //5限:5 6限:6
         int zigen = data.getInt("Zigen",5);
+
         //あり:1 なし:0
         int doyou = data.getInt("Doyou",1);
 
         if(zigen == 5 && doyou == 1){
             //土曜ありの５限
             setContentView(R.layout.activity_home);
-            layout_data = 0;
+            layout_mode = 0;
             Log.d("Test","土曜ありの５限");
         }else if(zigen==6 && doyou == 1){
             //土曜ありの６限
             setContentView(R.layout.activity_home1);
-            layout_data = 1;
+            layout_mode = 1;
             Log.d("Test","土曜ありの６限");
         }else if(zigen == 5 && doyou == 0){
             //土曜なしの５限
             setContentView(R.layout.activity_home2);
-            layout_data = 2;
+            layout_mode = 2;
             Log.d("Test","土曜なしの５限");
         }else if(zigen == 6 && doyou == 0){
             //土曜なしの６限
             setContentView(R.layout.activity_home3);
-            layout_data = 3;
+            layout_mode = 3;
             Log.d("Test","土曜なしの６限");
         }
 
@@ -69,10 +70,10 @@ public class HomeActivity extends ActionBarActivity{
         super.onResume();
 
         SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
-        String Subject = data.getString("SUBJECT", null);
-        String Room = data.getString("ROOM",null);
-        String Teacher = data.getString("TEACHER",null);
-        String Memo = data.getString("MEMO",null);
+//        String Subject = data.getString("SUBJECT", null);
+//        String Room = data.getString("ROOM",null);
+//        String Teacher = data.getString("TEACHER",null);
+//        String Memo = data.getString("MEMO",null);
 
 
 //        if (Subject!=null||Room!=null|Teacher!=null||Memo!=null){
@@ -84,8 +85,8 @@ public class HomeActivity extends ActionBarActivity{
 //        }
 
         //OutputActivityから戻った時の処理
-        Intent intent = getIntent();
-        int position = intent.getIntExtra("POSITION", 0);
+        //Intent intent = getIntent();
+        //int position = intent.getIntExtra("POSITION", 0);
         //subject[position] = intent.getStringExtra("SUBJECT");
         //teacher[position] = intent.getStringExtra("TEACHER");
         //room[position] = intent.getStringExtra("ROOM");
@@ -97,53 +98,87 @@ public class HomeActivity extends ActionBarActivity{
 //        }
 //        editor.apply();
 
-        for (int i =0;i<30;i++){
+        for (int i =0;i<36;i++){
             subject[i] = data.getString("SUBJECT"+String.valueOf(i), null);
             teacher[i] = data.getString("TEACHER"+String.valueOf(i),null);
             room[i] = data.getString("ROOM"+String.valueOf(i),null);
             memo[i] = data.getString("MEMO"+String.valueOf(i),null);
+
+            devideCase(i);
         }
+    }
 
-        //TODO Qiita
-        for(int i = 0; i < 30; i++){
-            int id = getResources().getIdentifier("position_" + i, "id", getPackageName());
-            textView[i] = (TextView)findViewById(id);
-            /**
-             * 追加 onTouch
-             */
-            final int finalI = i;
-
-            /**
-             * 時間割欄を長押しした場合の処理
-             */
-            textView[i].setOnLongClickListener(new View.OnLongClickListener() {
-                public boolean onLongClick(View v) {
-                    Intent intent = new Intent(getApplication(), OutputActivity.class);
-                    intent.putExtra("POSITION", finalI);
-                    startActivity(intent);
-                    Log.d("AAAAAAAAAAAAAAA",String.valueOf(finalI));
-                    // trueにすると以下のOnClickが呼ばれない
-                    return true;
+    public void devideCase(int i){
+        Log.d("devideCase",String.valueOf(i));
+        switch (layout_mode){
+            case 0:
+                //土曜ありの５限
+                if(i<30){
+                    setData(i);
                 }
-            });
+                break;
+            case 1:
+                //土曜ありの６限
+                setData(i);
+                break;
+            case 2:
+                //土曜なしの５限
+                if(i%6 != 5){
+                    if (i < 30) {
+                        //iが6n-1のとき
+                        setData(i);
+                    }
 
-            /**
-             * 時間割欄を軽くタッチした場合の処理
-             */
-            textView[i].setOnClickListener(new View.OnClickListener(){
-                public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(),
-                            "科目:" + subject[finalI] + "\n" +
-                            "教室:" + room[finalI] + "\n" +
-                            "教授:" + teacher[finalI] + "\n" +
-                            "メモ:" + memo[finalI],
-                            Toast.LENGTH_SHORT).show();
                 }
-            });
-            if(subject[i]!=null) {
-                Log.d("AAA",subject[i]);
-                textView[i].setText(subject[i]);
+                break;
+            case 3:
+                //土曜なしの６限
+                if (i%6 != 5){
+                    setData(i);
+                }
+
+        }
+    }
+
+    public void setData(int i){
+        Log.d("setData",String.valueOf(i));
+        int id = getResources().getIdentifier("position_" + i, "id", getPackageName());
+        textView[i] = (TextView)findViewById(id);
+        /**
+         * 追加 onTouch
+         */
+        final int finalI = i;
+
+        /**
+         * 時間割欄を長押しした場合の処理
+         */
+        textView[i].setOnLongClickListener(new View.OnLongClickListener() {
+            public boolean onLongClick(View v) {
+                Intent intent = new Intent(getApplication(), OutputActivity.class);
+                intent.putExtra("POSITION", finalI);
+                startActivity(intent);
+                Log.d("AAAAAAAAAAAAAAA",String.valueOf(finalI));
+                // trueにすると以下のOnClickが呼ばれない
+                return true;
             }
+        });
+
+        /**
+         * 時間割欄を軽くタッチした場合の処理
+         */
+        textView[i].setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),
+                        "科目:" + subject[finalI] + "\n" +
+                                "教室:" + room[finalI] + "\n" +
+                                "教授:" + teacher[finalI] + "\n" +
+                                "メモ:" + memo[finalI],
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        if(subject[i]!=null) {
+            Log.d("AAA",subject[i]);
+            textView[i].setText(subject[i]);
         }
     }
 

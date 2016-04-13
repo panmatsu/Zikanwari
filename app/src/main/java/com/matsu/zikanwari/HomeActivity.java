@@ -32,19 +32,19 @@ public class HomeActivity extends ActionBarActivity{
         int zigen = data.getInt("Zigen",5);
         int doyou = data.getInt("Doyou",1);
 
-        //if(zigen == 5 && doyou == 1){
+        if(zigen == 5 && doyou == 1){
             //土曜ありの５限
             setContentView(R.layout.activity_home);
-//        }else if(zigen==6 && doyou == 1){
-//            //土曜ありの６限
-//            setContentView(R.layout.activity_home1);
-//        }else if(zigen == 5 && doyou == 0){
-//            //土曜なしの５限
-//            setContentView(R.layout.activity_home2);
-//        }else if(zigen == 6 && doyou == 0){
-//            //土曜なしの６限
-//            setContentView(R.layout.activity_home3);
-//        }
+        }else if(zigen==6 && doyou == 1){
+            //土曜ありの６限
+            setContentView(R.layout.activity_home1);
+        }else if(zigen == 5 && doyou == 0){
+            //土曜なしの５限
+            setContentView(R.layout.activity_home2);
+        }else if(zigen == 6 && doyou == 0){
+            //土曜なしの６限
+            setContentView(R.layout.activity_home3);
+        }
 
         // ツールバーをアクションバーとしてセット
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
@@ -157,173 +157,4 @@ public class HomeActivity extends ActionBarActivity{
         return super.onOptionsItemSelected(item);
     }
 
-//    public void onClick(View v) {
-//
-//        int x = 0,y = 0,position = 0;
-//
-//        switch (v.getId()) {
-//            case R.id.position_0:
-//                x = 0;
-//                y = 0;
-//                position = 0;
-//                break;
-//            case R.id.position_1:
-//                x = 0;
-//                y = 1;
-//                position = 1;
-//                break;
-//            case R.id.position_2:
-//                x = 0;
-//                y = 2;
-//                position = 2;
-//                break;
-//            case R.id.position_3:
-//                x = 0;
-//                y = 3;
-//                position = 3;
-//                break;
-//            case R.id.position_4:
-//                x = 0;
-//                y = 4;
-//                position = 4;
-//                break;
-//            case R.id.position_5:
-//                x = 0;
-//                y = 5;
-//                position = 5;
-//                break;
-//            case R.id.position_6:
-//                x = 1;
-//                y = 0;
-//                position = 6;
-//                break;
-//            case R.id.position_7:
-//                x = 1;
-//                y = 1;
-//                position = 7;
-//                break;
-//            case R.id.position_8:
-//                x = 1;
-//                y = 2;
-//                position = 8;
-//                break;
-//            case R.id.position_9:
-//                x = 1;
-//                y = 3;
-//                position = 9;
-//                break;
-//            case R.id.position_10:
-//                x = 1;
-//                y = 4;
-//                position = 10;
-//                break;
-//            case R.id.position_11:
-//                x = 1;
-//                y = 5;
-//                position = 11;
-//                break;
-//            case R.id.position_12:
-//                x = 2;
-//                y = 0;
-//                position = 12;
-//                break;
-//            case R.id.position_13:
-//                x = 2;
-//                y = 1;
-//                position = 13;
-//                break;
-//            case R.id.position_14:
-//                x = 2;
-//                y = 2;
-//                position = 14;
-//                break;
-//            case R.id.position_15:
-//                x = 2;
-//                y = 3;
-//                position = 15;
-//                break;
-//            case R.id.position_16:
-//                x = 2;
-//                y = 4;
-//                position = 16;
-//                break;
-//            case R.id.position_17:
-//                x = 2;
-//                y = 5;
-//                position = 17;
-//                break;
-//            case R.id.position_18:
-//                x = 3;
-//                y = 0;
-//                position = 18;
-//                break;
-//            case R.id.position_19:
-//                x = 3;
-//                y = 1;
-//                position = 19;
-//                break;
-//            case R.id.position_20:
-//                x = 3;
-//                y = 2;
-//                position = 20;
-//                break;
-//            case R.id.position_21:
-//                x = 3;
-//                y = 3;
-//                position = 21;
-//                break;
-//            case R.id.position_22:
-//                x = 3;
-//                y = 4;
-//                position = 22;
-//                break;
-//            case R.id.position_23:
-//                x = 3;
-//                y = 5;
-//                position = 23;
-//                break;
-//            case R.id.position_24:
-//                x = 4;
-//                y = 0;
-//                position = 24;
-//                break;
-//            case R.id.position_25:
-//                x = 4;
-//                y = 1;
-//                position = 25;
-//                break;
-//            case R.id.position_26:
-//                x = 4;
-//                y = 2;
-//                position = 26;
-//                break;
-//            case R.id.position_27:
-//                x = 4;
-//                y = 3;
-//                position = 27;
-//                break;
-//            case R.id.position_28:
-//                x = 4;
-//                y = 4;
-//                position = 28;
-//                break;
-//            case R.id.position_29:
-//                x = 4;
-//                y = 5;
-//                position = 29;
-//                break;
-//        }
-//
-////        SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
-////        SharedPreferences.Editor editor = data.edit();
-////        editor.putInt("POSITION",position);
-////
-////        editor.apply();
-//
-//        Intent intent = new Intent(getApplication(), OutputActivity.class);
-//        intent.putExtra("position_x",x);
-//        intent.putExtra("position_y",y);
-//        intent.putExtra("POSITION",position);
-//        startActivity(intent);
-//    }
 }

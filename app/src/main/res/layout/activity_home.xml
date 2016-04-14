@@ -89,7 +89,7 @@
             android:id="@+id/position_0"
             android:onClick="onClick"
             android:gravity="center"
-            android:text="英語"
+            android:text=" "
             android:background="@drawable/simple_frame" />
         <TextView
             android:layout_width="match_parent"

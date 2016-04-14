@@ -3,6 +3,7 @@ package com.matsu.zikanwari;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -41,22 +42,22 @@ public class HomeActivity extends ActionBarActivity{
             //土曜ありの５限
             setContentView(R.layout.activity_home);
             layout_mode = 0;
-            Log.d("Test","土曜ありの５限");
+            //Log.d("Test","土曜ありの５限");
         }else if(zigen==6 && doyou == 1){
             //土曜ありの６限
             setContentView(R.layout.activity_home1);
             layout_mode = 1;
-            Log.d("Test","土曜ありの６限");
+            //Log.d("Test","土曜ありの６限");
         }else if(zigen == 5 && doyou == 0){
             //土曜なしの５限
             setContentView(R.layout.activity_home2);
             layout_mode = 2;
-            Log.d("Test","土曜なしの５限");
+            //Log.d("Test","土曜なしの５限");
         }else if(zigen == 6 && doyou == 0){
             //土曜なしの６限
             setContentView(R.layout.activity_home3);
             layout_mode = 3;
-            Log.d("Test","土曜なしの６限");
+            //Log.d("Test","土曜なしの６限");
         }
 
         // ツールバーをアクションバーとしてセット
@@ -109,7 +110,7 @@ public class HomeActivity extends ActionBarActivity{
     }
 
     public void devideCase(int i){
-        Log.d("devideCase",String.valueOf(i));
+        //Log.d("devideCase",String.valueOf(i));
         switch (layout_mode){
             case 0:
                 //土曜ありの５限
@@ -128,7 +129,6 @@ public class HomeActivity extends ActionBarActivity{
                         //iが6n-1のとき
                         setData(i);
                     }
-
                 }
                 break;
             case 3:
@@ -136,7 +136,6 @@ public class HomeActivity extends ActionBarActivity{
                 if (i%6 != 5){
                     setData(i);
                 }
-
         }
     }
 
@@ -144,6 +143,11 @@ public class HomeActivity extends ActionBarActivity{
         Log.d("setData",String.valueOf(i));
         int id = getResources().getIdentifier("position_" + i, "id", getPackageName());
         textView[i] = (TextView)findViewById(id);
+        if(subject[i]!=null) {
+            Log.d("AAA",String.valueOf(i)+subject[i]);
+            textView[i].setText(subject[i]);
+            textView[i].setTextColor(Color.BLACK);
+        }
         /**
          * 追加 onTouch
          */
@@ -176,10 +180,6 @@ public class HomeActivity extends ActionBarActivity{
                         Toast.LENGTH_SHORT).show();
             }
         });
-        if(subject[i]!=null) {
-            Log.d("AAA",subject[i]);
-            textView[i].setText(subject[i]);
-        }
     }
 
     @Override

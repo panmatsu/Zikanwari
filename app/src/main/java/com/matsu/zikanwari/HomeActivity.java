@@ -137,7 +137,6 @@ public class HomeActivity extends ActionBarActivity{
                     setData(i);
                 }
                 break;
-
         }
     }
 
@@ -154,7 +153,6 @@ public class HomeActivity extends ActionBarActivity{
          * 追加 onTouch
          */
         final int finalI = i;
-
         /**
          * 時間割欄を長押しした場合の処理
          */
@@ -198,12 +196,17 @@ public class HomeActivity extends ActionBarActivity{
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.menu_toppage:
-//                NavUtils.navigateUpFromSameTask(this);
+            //設定ページへの移動
+            case R.id.menu_setting_page:
                 Intent intent = new Intent(getApplication(), SettingActivity.class);
                 startActivity(intent);
-                return true;
-        }
+                break;
+            //ToDoページへの移動
+            case R.id.menu_ToDo:
+                Intent todo_intent = new Intent(this,TodoActivity.class);
+                startActivity(todo_intent);
+                break;
+            }
         return super.onOptionsItemSelected(item);
     }
 

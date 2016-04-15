@@ -136,6 +136,8 @@ public class HomeActivity extends ActionBarActivity{
                 if (i%6 != 5){
                     setData(i);
                 }
+                break;
+
         }
     }
 

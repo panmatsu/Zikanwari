@@ -70,81 +70,81 @@ public class OutputActivity extends Activity {
         intent = getIntent();
         position = intent.getIntExtra("POSITION", 0);
 
+        setDay(position);
+
+        date += "曜日";
+
         if(0 <= position && position <6){
-            setDay(position);
             date += "1";
         }else if(6 <= position && position < 12){
-            setDay(position - 6);
             date += "2";
-        }else if(6 <= position && position < 12){
-            setDay(position - 6);
+        }else if(12 <= position && position < 18){
             date += "3";
-        }else if(6 <= position && position < 12){
-            setDay(position - 6);
+        }else if(18 <= position && position < 24){
             date += "4";
-        }else if(6 <= position && position < 12){
-            setDay(position - 6);
+        }else if(24 <= position && position < 30){
             date += "5";
-        }else if(6 <= position && position < 12){
-            setDay(position - 6);
+        }else if(30 <= position && position < 36){
             date += "6";
         }
+
+        date += "時間目";
 
         tb.setText(date);
     }
 
     //曜日を代入する
     public void setDay(int num){
-        if(position == 0){
+        if(position%6 == 0 ){
             date = "月";
-        }else if(position == 1){
+        }else if(position%6 == 1){
             date = "火";
-        }else if(position == 2){
+        }else if(position%6 == 2){
             date = "水";
-        }else if(position == 3){
+        }else if(position%6 == 3){
             date = "木";
-        }else if(position == 4){
+        }else if(position%6 == 4){
             date = "金";
-        }else if(position == 5) {
+        }else if(position%6 == 5) {
             date = "土";
         }
     }
 
 
-    public void WeekTime(){
-
-        if(position_x == 0){
-            POT = 1;
-        } else if(position_x == 1){
-            POT = 2;
-        } else if(position_x == 2){
-            POT = 3;
-        } else if(position_x == 3){
-            POT = 4;
-        } else if(position_x == 4){
-            POT = 5;
-        } else if(position_x == 5){
-            POT = 6;
-        } else if(position_x == 6){
-            POT = 7;
-        }
-
-        if(position_y == 0){
-            DOTW = "月";
-        } else if(position_y == 1){
-            DOTW = "火";
-        } else if(position_y == 2){
-            DOTW = "水";
-        } else if(position_y == 3){
-            DOTW = "木";
-        } else if(position_y == 4){
-            DOTW = "金";
-        } else if(position_y == 5){
-            DOTW = "土";
-        }
-
-        tb.setText(DOTW + POT);
-    }
+//    public void WeekTime(){
+//
+//        if(position_x == 0){
+//            POT = 1;
+//        } else if(position_x == 1){
+//            POT = 2;
+//        } else if(position_x == 2){
+//            POT = 3;
+//        } else if(position_x == 3){
+//            POT = 4;
+//        } else if(position_x == 4){
+//            POT = 5;
+//        } else if(position_x == 5){
+//            POT = 6;
+//        } else if(position_x == 6){
+//            POT = 7;
+//        }
+//
+//        if(position_y == 0){
+//            DOTW = "月";
+//        } else if(position_y == 1){
+//            DOTW = "火";
+//        } else if(position_y == 2){
+//            DOTW = "水";
+//        } else if(position_y == 3){
+//            DOTW = "木";
+//        } else if(position_y == 4){
+//            DOTW = "金";
+//        } else if(position_y == 5){
+//            DOTW = "土";
+//        }
+//
+//        tb.setText(DOTW + POT);
+//    }
 
 
 

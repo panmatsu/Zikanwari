@@ -142,7 +142,7 @@ public class HomeActivity extends ActionBarActivity{
     }
 
     public void setData(int i){
-        Log.d("setData",String.valueOf(i));
+        //Log.d("setData",String.valueOf(i));
         int id = getResources().getIdentifier("position_" + i, "id", getPackageName());
         textView[i] = (TextView)findViewById(id);
         if(subject[i]!=null) {
@@ -162,6 +162,7 @@ public class HomeActivity extends ActionBarActivity{
             public boolean onLongClick(View v) {
                 Intent intent = new Intent(getApplication(), OutputActivity.class);
                 intent.putExtra("POSITION", finalI);
+                Log.d("TEST",finalI+"intent");
                 startActivity(intent);
                 Log.d("AAAAAAAAAAAAAAA",String.valueOf(finalI));
                 // trueにすると以下のOnClickが呼ばれない

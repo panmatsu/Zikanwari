@@ -18,9 +18,11 @@ public class SettingActivity extends AppCompatActivity {
 
     String str0 ="あり";  //数字で1
     int selected2=0;  //ありだと1、なし0
-     //  int selected0; //時間数を入れる
+    //  int selected0; //時間数を入れる
     EditText eT00;
     String nottext; //通知
+    Spinner item0;
+    Spinner item1;
 
 
     @Override
@@ -28,14 +30,26 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         eT00 = (EditText)findViewById(R.id.eT0);
+
+        ArrayAdapter<String> adapter0 = new ArrayAdapter<String>(this, R.layout.spinner_item,getResources().getStringArray(R.array.items0));
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item,getResources().getStringArray(R.array.items1));
+
+        adapter0.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        adapter1.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+// レイアウトからSpinnerを取得
+        item0 = (Spinner) findViewById(R.id.spinnerZ);  //時限数
+        item1 = (Spinner) findViewById(R.id.spinnerD);  //土曜日表示
+
+
+        item0.setAdapter(adapter0);
+        item1.setAdapter(adapter1);
     }
 
     public void spinnerOK(View view){       //OKボタンを押したとき実行
 
-// レイアウトからSpinnerを取得
-        Spinner item0 = (Spinner) findViewById(R.id.spinnerZ);  //時限数
-        Spinner item1 = (Spinner) findViewById(R.id.spinnerD);  //土曜日表示
 // 選択したアイテムを取得
+
         int selected0 = Integer.parseInt((String) item0.getSelectedItem()); //時限数
         String selected1 = (String) item1.getSelectedItem();    //土曜日表示
 
@@ -83,5 +97,4 @@ public class SettingActivity extends AppCompatActivity {
     }
 
 }
-
 

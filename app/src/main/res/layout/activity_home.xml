@@ -32,12 +32,15 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="30dp"
             android:text="月"
             android:background="@drawable/youbi_frame" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:textSize="30dp"
+
             android:gravity="center"
             android:background="@drawable/youbi_frame"
             android:text="火" />
@@ -46,11 +49,15 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
+            android:textSize="30dp"
+
             android:background="@drawable/youbi_frame"
             android:text="水" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textSize="30dp"
+
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/youbi_frame"
@@ -59,6 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:textSize="30dp"
             android:layout_weight="1"
             android:background="@drawable/youbi_frame"
             android:text="金" />
@@ -67,6 +75,8 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:layout_weight="1"
+            android:textSize="30dp"
+
             android:background="@drawable/youbi_frame"
             android:text="土" />
     </LinearLayout>
@@ -79,6 +89,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="1"
+
+            android:textSize="30dp"
+
             android:gravity="center"
             android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
@@ -88,6 +101,7 @@
             android:layout_weight="1"
             android:id="@+id/position_0"
             android:onClick="onClick"
+
             android:gravity="center"
             android:text=" "
             android:background="@drawable/simple_frame" />
@@ -145,6 +159,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:textSize="30dp"
+
             android:text="2"
             android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
@@ -203,6 +219,7 @@
             android:background="@drawable/simple_frame"
             android:text="26" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -213,6 +230,8 @@
             android:text="3"
             android:gravity="center"
             android:background="@drawable/zikan_frame"
+            android:textSize="30dp"
+
             android:layout_weight="1"/>
         <TextView
             android:layout_width="match_parent"

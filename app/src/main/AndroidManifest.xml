@@ -25,7 +25,11 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".SettingActivity" />
-        <activity android:name=".TodoActivity"></activity>
+        <activity android:name=".TodoActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -15,13 +15,10 @@ public class OutputActivity extends Activity {
     TextView tb;
     EditText et,et2,et3,et4;
     Intent intent;
-    String DOTW;
-    int POT;
     String subject;
     String teacher;
     String room;
     String memo;
-    int position_x,position_y;
     Button saveButton;
     int position;
 
@@ -56,8 +53,6 @@ public class OutputActivity extends Activity {
 
         et4.setHint(data.getString("MEMO"+String.valueOf(position),null));
         et4.setText(data.getString("MEMO" + String.valueOf(position), null));
-
-        //WeekTime();
     }
 
     /**
@@ -110,44 +105,6 @@ public class OutputActivity extends Activity {
         }
     }
 
-
-//    public void WeekTime(){
-//
-//        if(position_x == 0){
-//            POT = 1;
-//        } else if(position_x == 1){
-//            POT = 2;
-//        } else if(position_x == 2){
-//            POT = 3;
-//        } else if(position_x == 3){
-//            POT = 4;
-//        } else if(position_x == 4){
-//            POT = 5;
-//        } else if(position_x == 5){
-//            POT = 6;
-//        } else if(position_x == 6){
-//            POT = 7;
-//        }
-//
-//        if(position_y == 0){
-//            DOTW = "月";
-//        } else if(position_y == 1){
-//            DOTW = "火";
-//        } else if(position_y == 2){
-//            DOTW = "水";
-//        } else if(position_y == 3){
-//            DOTW = "木";
-//        } else if(position_y == 4){
-//            DOTW = "金";
-//        } else if(position_y == 5){
-//            DOTW = "土";
-//        }
-//
-//        tb.setText(DOTW + POT);
-//    }
-
-
-
     public void OK(View view){
         //Textの取得
         subject = et.getText().toString();
@@ -167,11 +124,6 @@ public class OutputActivity extends Activity {
 
 
         intent = new Intent(this,HomeActivity.class);
-        //intent.putExtra("POSITION",position);
-        //intent.putExtra("SUBJECT",subject);
-        //intent.putExtra("ROOM",room);
-        //intent.putExtra("TEACHER",teacher);
-        //intent.putExtra("MEMO",memo);
         startActivity(intent);
     }
 }

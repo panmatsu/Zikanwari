@@ -1,9 +1,13 @@
 package com.matsu.zikanwari;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,6 +20,7 @@ import java.util.Map;
 
 public class TodoActivity extends AppCompatActivity {
 
+    //ListViewのitemのText
     private static final String LIST_ITEM_TEXT1 = "Id";
     private static final String LIST_ITEM_TEXT2 = "Name";
 
@@ -26,9 +31,8 @@ public class TodoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_todo);
 
         // ツールバーをアクションバーとしてセット
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Toolbar toolbar_todo = (Toolbar) findViewById(R.id.tool_bar_todo);
+        setSupportActionBar(toolbar_todo);
 
         ListView listView = (ListView)findViewById(R.id.list_view);
 
@@ -53,9 +57,42 @@ public class TodoActivity extends AppCompatActivity {
         // 表示するデータを設定
         for (int i = 0; i < 10; i++) {
             Map<String, String> map = new HashMap<>();
-            map.put(LIST_ITEM_TEXT1, String.valueOf(i));
-            map.put(LIST_ITEM_TEXT2, "名前・・・");
+            if(i == 0){
+                map.put(LIST_ITEM_TEXT1, "英語の宿題");
+                map.put(LIST_ITEM_TEXT2, "2016年6月１７日まで");
+
+            }else {
+                map.put(LIST_ITEM_TEXT1, String.valueOf(i));
+                map.put(LIST_ITEM_TEXT2, "名前・・・");
+            }
             mList.add(map);
         }
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        final MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.todo_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            //設定ページへの移動
+            case R.id.menu_setting_page:
+                Intent intent = new Intent(getApplication(), SettingActivity.class);
+                startActivity(intent);
+                break;
+            //ToDoページへの移動
+            case R.id.menu_ToDo:
+                Intent todo_intent = new Intent(this,TodoActivity.class);
+                startActivity(todo_intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

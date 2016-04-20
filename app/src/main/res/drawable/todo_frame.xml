@@ -5,11 +5,11 @@
     <!-- 枠線 width:線の幅、color:線の色 -->
     <stroke
         android:width="4dp"
-        android:color="#34465d" />
+        android:color="#79e3a2" />
 
     <solid
         android:color="#fff" >
     </solid>
     <corners
-        android:radius="30dp" /><!-- 角の丸みを調節 -->
+        android:radius="10dp" /><!-- 角の丸みを調節 -->
 </shape>

@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<menu xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--xmlns:yourapp="http://schemas.android.com/apk/res-auto" >-->
-
-<!-- トップページ -->
-<!--<item-->
-<!--android:id="@+id/menu_toppage"-->
-<!--android:title="設定"-->
-<!--android:icon="@drawable/setting"-->
-<!--android:onClick="settingClick"-->
-<!--yourapp:showAsAction="always"/>-->
-<!--</menu>-->
-
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:icon="@drawable/setting"
-    tools:context=".MainActivity">
+    tools:context=".TodoActivity">
 
     <item
         android:id="@+id/menu_ToDo"

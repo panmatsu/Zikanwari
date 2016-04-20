@@ -8,7 +8,7 @@
     tools:context="com.matsu.zikanwari.TodoActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/tool_bar"
+        android:id="@+id/tool_bar_todo"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"

@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/minie"
+        android:icon="@drawable/icon_zikanwari"
         android:label="時間割りアプリ"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">

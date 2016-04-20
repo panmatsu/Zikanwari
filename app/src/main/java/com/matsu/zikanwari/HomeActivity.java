@@ -203,7 +203,7 @@ public class HomeActivity extends ActionBarActivity{
                 break;
             //ToDoページへの移動
             case R.id.menu_ToDo:
-                Intent todo_intent = new Intent(this,MainActivity.class);
+                Intent todo_intent = new Intent(this,TodoActivity.class);
                 startActivity(todo_intent);
                 break;
             }

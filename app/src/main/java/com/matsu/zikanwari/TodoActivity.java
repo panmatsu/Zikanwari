@@ -28,7 +28,7 @@ public class TodoActivity extends AppCompatActivity {
         // ツールバーをアクションバーとしてセット
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ListView listView = (ListView)findViewById(R.id.list_view);
 

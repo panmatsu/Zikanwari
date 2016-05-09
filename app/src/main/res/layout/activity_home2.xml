@@ -20,14 +20,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/icon_zikanwari"
+            android:scaleType="fitXY" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text=""
-            android:layout_weight="1" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:textSize="30dp"
             android:gravity="center"
             android:layout_weight="1"
             android:text="月"
@@ -35,6 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textSize="30dp"
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/youbi_frame"
@@ -43,12 +46,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:textSize="30dp"
             android:gravity="center"
             android:background="@drawable/youbi_frame"
             android:text="水" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textSize="30dp"
             android:layout_weight="1"
             android:gravity="center"
             android:background="@drawable/youbi_frame"
@@ -57,6 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:textSize="30dp"
             android:layout_weight="1"
             android:background="@drawable/youbi_frame"
             android:text="金" />
@@ -70,54 +76,136 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="1"
+            android:textSize="30dp"
             android:gravity="center"
             android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/position_0"
-            android:onClick="onClick"
-            android:gravity="center"
-            android:text="英語"
-            android:background="@drawable/simple_frame" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_0"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:gravity="center"
-            android:id="@+id/position_1"
-            android:background="@drawable/simple_frame"
-            android:text="12" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_1"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:gravity="center"
-            android:id="@+id/position_2"
-            android:background="@drawable/simple_frame"
-            android:text="13" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_2"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/position_3"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="14" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_3"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/position_4"
-            android:gravity="center"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="15" />
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_4"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -127,54 +215,135 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:textSize="30dp"
             android:text="2"
             android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="21"
-            android:onClick="onClick"
-            android:id="@+id/position_6"
-            android:background="@drawable/simple_frame" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_6"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/position_7"
-            android:background="@drawable/simple_frame"
-            android:onClick="onClick"
-            android:text="22" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_7"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/position_8"
-            android:background="@drawable/simple_frame"
-            android:onClick="onClick"
-            android:text="23" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_8"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:id="@+id/position_9"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="24" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_9"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:gravity="center"
-            android:id="@+id/position_10"
-            android:background="@drawable/simple_frame"
-            android:text="25" />
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_10"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -183,55 +352,136 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textSize="30dp"
             android:text="3"
             android:gravity="center"
             android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="31"
-            android:id="@+id/position_12"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_12"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/position_13"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="32" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_13"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/position_14"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="33" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_14"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:gravity="center"
-            android:id="@+id/position_15"
-            android:background="@drawable/simple_frame"
-            android:text="34" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_15"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/position_16"
-            android:gravity="center"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="35" />
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_16"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -241,53 +491,135 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="4"
+            android:textSize="30dp"
             android:gravity="center"
             android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="onClick"
-            android:layout_weight="1"
-            android:text="41"
-            android:gravity="center"
-            android:id="@+id/position_18"
-            android:background="@drawable/simple_frame" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_18"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:gravity="center"
-            android:id="@+id/position_19"
-            android:background="@drawable/simple_frame"
-            android:text="42" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_19"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/position_20"
-            android:gravity="center"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_20"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:onClick="onClick"
-            android:id="@+id/position_21"
-            android:background="@drawable/simple_frame"
-            android:text="44" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_21"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:id="@+id/position_22"
-            android:background="@drawable/simple_frame"
-            android:onClick="onClick"
-            android:text="45" />
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_22"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -296,55 +628,135 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textSize="30dp"
             android:text="5"
             android:gravity="center"
             android:background="@drawable/zikan_frame"
             android:layout_weight="1"/>
-        <TextView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:text="51"
-            android:id="@+id/position_24"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_24"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/position_25"
-            android:gravity="center"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="52" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_25"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:id="@+id/position_26"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="53" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_26"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/position_27"
-            android:gravity="center"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="54" />
-        <TextView
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_27"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/position_28"
-            android:gravity="center"
-            android:onClick="onClick"
-            android:background="@drawable/simple_frame"
-            android:text="55" />
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/subject_28"
+
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:onClick="onClick"
+                android:gravity="center"
+                android:text="教科 "
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:background="@drawable/simple_frame" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="教室"
+                android:textColor="#767373"
+                android:layout_gravity="bottom|right" />
+        </FrameLayout>
     </LinearLayout>
 
 </LinearLayout>

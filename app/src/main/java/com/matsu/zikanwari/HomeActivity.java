@@ -22,7 +22,8 @@ public class HomeActivity extends ActionBarActivity{
     String[] room = new String[36];
     String[] memo = new String[36];
 
-    TextView[] textView = new TextView[36];
+    TextView[] subject_textView = new TextView[36];
+    TextView[] room_textView = new TextView[36];
 
     //Layoutのデータ番号
     int layout_mode = 0;
@@ -100,10 +101,10 @@ public class HomeActivity extends ActionBarActivity{
 //        editor.apply();
 
         for (int i =0;i<36;i++){
-            subject[i] = data.getString("SUBJECT"+String.valueOf(i), null);
-            teacher[i] = data.getString("TEACHER"+String.valueOf(i),null);
-            room[i] = data.getString("ROOM"+String.valueOf(i),null);
-            memo[i] = data.getString("MEMO"+String.valueOf(i),null);
+            subject[i] = data.getString("SUBJECT"+String.valueOf(i), "       ");
+            teacher[i] = data.getString("TEACHER"+String.valueOf(i), "       ");
+            room[i] = data.getString("ROOM"+String.valueOf(i), "       ");
+            memo[i] = data.getString("MEMO"+String.valueOf(i), "       ");
 
             devideCase(i);
         }
@@ -141,22 +142,28 @@ public class HomeActivity extends ActionBarActivity{
     }
 
     public void setData(int i){
-        //Log.d("setData",String.valueOf(i));
-        int id = getResources().getIdentifier("position_" + i, "id", getPackageName());
-        textView[i] = (TextView)findViewById(id);
-        if(subject[i]!=null) {
-            Log.d("AAA",String.valueOf(i)+subject[i]);
-            textView[i].setText(subject[i]);
-            textView[i].setTextColor(Color.BLACK);
-        }
         /**
-         * 追加 onTouch
+         * xmlファイルからidを読み取りfor文で
          */
-        final int finalI = i;
+        int id_subjectText = getResources().getIdentifier("subject_" + i, "id", getPackageName());
+        int id_roomText = getResources().getIdentifier("room_"+ i, "id",getPackageName());
+
+        subject_textView[i] = (TextView)findViewById(id_subjectText);
+        room_textView[i] = (TextView)findViewById(id_roomText);
+
+        //教科、教室にデータが有ったならTextをsetする
+        if(subject[i]!=null) {
+            subject_textView[i].setText(subject[i]);
+        }
+        if(room[i] != null){
+            room_textView[i].setText(room[i]);
+        }
+
         /**
          * 時間割欄を長押しした場合の処理
          */
-        textView[i].setOnLongClickListener(new View.OnLongClickListener() {
+        final int finalI = i;
+        subject_textView[i].setOnLongClickListener(new View.OnLongClickListener() {
             public boolean onLongClick(View v) {
                 Intent intent = new Intent(getApplication(), OutputActivity.class);
                 intent.putExtra("POSITION", finalI);
@@ -171,7 +178,7 @@ public class HomeActivity extends ActionBarActivity{
         /**
          * 時間割欄を軽くタッチした場合の処理
          */
-        textView[i].setOnClickListener(new View.OnClickListener(){
+        subject_textView[i].setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),
                         "科目:" + subject[finalI] + "\n" +
@@ -185,6 +192,7 @@ public class HomeActivity extends ActionBarActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        //toolbarにメニューをセット
         final MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
 
@@ -194,7 +202,6 @@ public class HomeActivity extends ActionBarActivity{
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         switch (id) {
             //設定ページへの移動
             case R.id.menu_setting_page:

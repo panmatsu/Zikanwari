@@ -1,6 +1,8 @@
 package com.matsu.zikanwari;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -23,6 +25,15 @@ public class TodoActivity extends AppCompatActivity {
     //ListViewのitemのText
     private static final String LIST_ITEM_TEXT1 = "Id";
     private static final String LIST_ITEM_TEXT2 = "Name";
+    /**
+     *TODO
+     * ToDoSettingActivityをつくる
+     * やることと締め切りの日付を選択(DatePicker)させる
+     * SharePreferenceで保存する
+     * ToDoActivityで表示させる
+     */
+
+
 
     private List<Map<String,String>> mList;
     @Override
@@ -33,6 +44,15 @@ public class TodoActivity extends AppCompatActivity {
         // ツールバーをアクションバーとしてセット
         Toolbar toolbar_todo = (Toolbar) findViewById(R.id.tool_bar_todo);
         setSupportActionBar(toolbar_todo);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
         ListView listView = (ListView)findViewById(R.id.list_view);
 
@@ -57,9 +77,13 @@ public class TodoActivity extends AppCompatActivity {
         // 表示するデータを設定
         for (int i = 0; i < 10; i++) {
             Map<String, String> map = new HashMap<>();
-            if(i == 0){
+            if(i == 0) {
                 map.put(LIST_ITEM_TEXT1, "英語の宿題");
                 map.put(LIST_ITEM_TEXT2, "2016年6月１７日まで");
+
+            }else if(i==9){
+                map.put(LIST_ITEM_TEXT1, "プログラミングの宿題");
+                map.put(LIST_ITEM_TEXT2, "2016年5月20日まで");
 
             }else {
                 map.put(LIST_ITEM_TEXT1, String.valueOf(i));

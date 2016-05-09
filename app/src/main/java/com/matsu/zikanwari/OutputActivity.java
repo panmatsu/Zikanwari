@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class OutputActivity extends Activity {
 
     TextView tb;
-    EditText et,et2,et3,et4;
+    EditText subject_edit,room_edit,teacher_edit,memo_edit;
     Intent intent;
     String subject;
     String teacher;
@@ -32,27 +32,27 @@ public class OutputActivity extends Activity {
         //保存Button
         saveButton = (Button)findViewById(R.id.button);
 
-        et = (EditText)findViewById(R.id.editText);
-        et2 = (EditText)findViewById(R.id.editText2);
-        et3 = (EditText)findViewById(R.id.editText3);
-        et4 = (EditText)findViewById(R.id.editText4);
+        subject_edit = (EditText)findViewById(R.id.subject_editText);
+        room_edit = (EditText)findViewById(R.id.room_editText);
+        teacher_edit = (EditText)findViewById(R.id.teacher_editText);
+        memo_edit = (EditText)findViewById(R.id.memo_editText);
 
         //左上に選択された欄の曜日と何時間目かを表示させる
         setDate();
 
         //Hint と Text に表示させる
         SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
-        et.setHint(data.getString("SUBJECT" + String.valueOf(position), null));
-        et.setText(data.getString("SUBJECT" + String.valueOf(position), null));
+        subject_edit.setHint(data.getString("SUBJECT" + String.valueOf(position), null));
+        subject_edit.setText(data.getString("SUBJECT" + String.valueOf(position), null));
 
-        et3.setHint(data.getString("ROOM" + String.valueOf(position), null));
-        et3.setText(data.getString("ROOM" + String.valueOf(position), null));
+        room_edit.setHint(data.getString("ROOM" + String.valueOf(position), null));
+        room_edit.setText(data.getString("ROOM" + String.valueOf(position), null));
 
-        et2.setHint(data.getString("TEACHER" + String.valueOf(position), null));
-        et2.setText(data.getString("TEACHER" + String.valueOf(position), null));
+        teacher_edit.setHint(data.getString("TEACHER" + String.valueOf(position), null));
+        teacher_edit.setText(data.getString("TEACHER" + String.valueOf(position), null));
 
-        et4.setHint(data.getString("MEMO"+String.valueOf(position),null));
-        et4.setText(data.getString("MEMO" + String.valueOf(position), null));
+        memo_edit.setHint(data.getString("MEMO"+String.valueOf(position),null));
+        memo_edit.setText(data.getString("MEMO" + String.valueOf(position), null));
     }
 
     /**
@@ -107,10 +107,10 @@ public class OutputActivity extends Activity {
 
     public void OK(View view){
         //Textの取得
-        subject = et.getText().toString();
-        teacher = et2.getText().toString();
-        room = et3.getText().toString();
-        memo = et4.getText().toString();
+        subject = subject_edit.getText().toString();
+        room = room_edit.getText().toString();
+        teacher = teacher_edit.getText().toString();
+        memo = memo_edit.getText().toString();
 
 
         SharedPreferences data = getSharedPreferences("DataSave", Context.MODE_PRIVATE);
